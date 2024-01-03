@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  database:
+    container_name: postgres-brain-agriculture
+    image: postgres:latest
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - /var/postgres:/data/postgres
+    env_file:
+      - .env
