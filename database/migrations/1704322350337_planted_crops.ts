@@ -10,7 +10,7 @@ export default class extends BaseSchema {
       table.string('cultura_plantada')
 
       //relacionamento 1 para muitos: 1 agricultor pode fazer diversas culturas
-      table.integer('farmerId').unsigned().references('farmers.id').onDelete('CASCADE')
+      table.integer('farmer_id').unsigned().references('farmers.id').onDelete('CASCADE')
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

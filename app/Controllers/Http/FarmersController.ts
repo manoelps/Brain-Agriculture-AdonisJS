@@ -16,13 +16,15 @@ export default class FarmersController {
   }
 
   public async index() {
-    const farmers = await Farmer.all()
+    const farmers = await Farmer.query().preload('plantedCrops')
     return {
       data: farmers,
     }
   }
   public async show({ params }: HttpContextContract) {
     const farmer = await Farmer.findOrFail(params.id)
+
+    await farmer.load('plantedCrops')
 
     return {
       data: farmer,
