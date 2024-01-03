@@ -1,7 +1,12 @@
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, HasMany, column, hasMany } from '@ioc:Adonis/Lucid/Orm'
 import { DateTime } from 'luxon'
+import PlantedCrop from './PlantedCrop'
 
 export default class Farmer extends BaseModel {
+  //configura o relacionamento com a tabela de culturas
+  @hasMany(() => PlantedCrop)
+  public plantedCrops: HasMany<typeof PlantedCrop>
+
   @column({ isPrimary: true })
   public id: number
 
