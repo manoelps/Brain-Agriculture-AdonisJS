@@ -31,7 +31,6 @@ export default class UpdateValidator extends BaseValidator {
     area_vegetacao_hectares: schema.number(),
     culturas_plantadas: schema.array().members(
       schema.object().members({
-        id: schema.number(),
         cultura: schema.string(),
       })
     ),
