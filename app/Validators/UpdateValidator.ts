@@ -1,6 +1,7 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { rules, schema } from '@ioc:Adonis/Core/Validator'
 import BaseValidator from './BaseValidator'
+import { Culturas, EstadosBrasileiros } from './enums'
 
 export default class UpdateValidator extends BaseValidator {
   constructor(protected ctx: HttpContextContract) {
@@ -25,13 +26,13 @@ export default class UpdateValidator extends BaseValidator {
     nome_produtor: schema.string({ trim: true }, [rules.minLength(3), rules.maxLength(255)]),
     nome_fazenda: schema.string({ trim: true }, [rules.minLength(3), rules.maxLength(255)]),
     cidade: schema.string({ trim: true }, [rules.minLength(3), rules.maxLength(100)]),
-    estado: schema.string({ trim: true }, [rules.minLength(2), rules.maxLength(2)]),
+    estado: schema.enum(Object.values(EstadosBrasileiros)),
     area_total_hectares: schema.number(),
     area_agricultavel_hectares: schema.number(),
     area_vegetacao_hectares: schema.number(),
     culturas_plantadas: schema.array().members(
       schema.object().members({
-        cultura: schema.string(),
+        cultura: schema.enum(Object.values(Culturas)),
       })
     ),
   })

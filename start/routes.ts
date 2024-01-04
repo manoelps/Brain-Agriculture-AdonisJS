@@ -6,6 +6,7 @@ Route.group(() => {
     Route.delete('/farmers/:id/crops', 'FarmersController.destroyPlantedCrop')
 
     Route.get('/crops', 'PlantedCropsController.index')
+
     Route.get('/dashboard', 'DashboardController.index')
   }).prefix('/v1')
 }).prefix('/api')

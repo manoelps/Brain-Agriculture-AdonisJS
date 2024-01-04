@@ -7,5 +7,6 @@ export default class BaseValidator {
     regex: '{{ field }} inválido',
     string: '{{ field }} deve ser preenchido apenas com texto',
     number: '{{ field }} deve ser preenchido apenas com numeros',
+    enum: '{{ field }} deve ser uma das seguintes opções: {{ options.choices }}',
   }
 }
