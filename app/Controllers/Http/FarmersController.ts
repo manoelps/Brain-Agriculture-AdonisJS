@@ -32,7 +32,7 @@ export default class FarmersController {
 
     culturasPlantadas.map(async (culturas) => {
       const plantedCrop = {
-        cultura_plantada: culturas.cultura,
+        cultura: culturas.cultura,
         farmerId: farmer.id,
       }
 
@@ -108,7 +108,7 @@ export default class FarmersController {
 
     body.culturas_plantadas.map(async (culturas) => {
       const plantedCrop = {
-        cultura_plantada: culturas.cultura,
+        cultura: culturas.cultura,
         farmerId: params.id,
       }
 

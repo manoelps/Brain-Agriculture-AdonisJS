@@ -7,7 +7,7 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
 
-      table.string('cultura_plantada')
+      table.string('cultura')
 
       //relacionamento 1 para muitos: 1 agricultor pode fazer diversas culturas
       table.integer('farmer_id').unsigned().references('farmers.id').onDelete('CASCADE')

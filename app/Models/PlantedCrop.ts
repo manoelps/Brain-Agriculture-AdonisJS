@@ -6,7 +6,7 @@ export default class PlantedCrop extends BaseModel {
   public id: number
 
   @column()
-  public cultura_plantada: string
+  public cultura: string
 
   @column()
   public farmerId: number
