@@ -20,13 +20,13 @@ Usando o gerenciador de pacotes YARN:
 
 `yarn`
 
-Ou Usando o gerenciador de pacotes NPM:
+Ou usando o gerenciador de pacotes NPM:
 
 `npm install`
 
 **Inicialize o serviço do container docker para ter acesso ao banco de dados PostgreSQL**
 
-`docker-compose up -d` (caso ocorra erro ao executar vá para a sessão **_Resolvendo problemas_** ao final do arquivo, depois volte a esse ponto para continuar)
+`docker-compose up -d` (caso ocorra erro ao executar, vá para a sessão **_Resolvendo problemas_** ao final do arquivo, depois volte a esse ponto para continuar)
 
 Execute as migrations
 
@@ -209,7 +209,7 @@ GET http://localhost:3333/api/v1/dashboard
 
 # Resolvendo problemas
 
-**Caso ocorra erro ao executar container docker do banco de dados postgreSQL, informando que a porta 5432 já está em uso**
+**Caso ocorra erro ao executar o container do banco de dados postgreSQL, informando que a porta 5432 já se encontra em uso**
 
 Execute o comando abaixo no terminal para listar todos os containers em execução:
 
