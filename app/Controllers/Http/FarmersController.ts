@@ -5,7 +5,7 @@ import PlantedCrop from 'App/Models/PlantedCrop'
 import RegisterValidator from 'App/Validators/RegisterValidator'
 import UpdateValidator from 'App/Validators/UpdateValidator'
 
-import { handleRowNotFoundError } from '../Utils/ErrorHandlers'
+import { handleRowNotFoundError } from '../../Utils/ErrorHandlers'
 
 export default class FarmersController {
   private helpers = new Helpers()
