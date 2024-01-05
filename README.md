@@ -24,7 +24,8 @@ Ou usando o gerenciador de pacotes NPM:
 
 `npm install`
 
-**Crie um arquivo chamado ***.env***, para armazenar as configuração das variáveis de ambiente do projeto, e adicione as informações a seguir:**
+**Crie um arquivo chamado \***.env**\*, para armazenar as configuração das variáveis de ambiente do projeto, e adicione as informações a seguir:**
+
 ```javascript
 PORT=3333
 HOST=0.0.0.0
@@ -43,7 +44,6 @@ PG_USER=admin
 PG_PASSWORD=postgres
 PG_DB_NAME=brain_agriculture
 ```
-
 
 **Inicialize o serviço do container docker para ter acesso ao banco de dados PostgreSQL**
 
@@ -65,14 +65,14 @@ Inicialize a aplicação:
 
 Método: `GET`
 
-Endpoint: `/api/v1/farmers`
+Endpoint: `/api/v1/farmers?page=1`
 
 Descrição: Retorna uma lista de todos os produtores rurais cadastrados.
 
 **Exemplo de Requisição:**
 
 ```javascript
-GET http://localhost:3333/api/v1/farmers
+GET http://localhost:3333/api/v1/farmers?page=1
 ```
 
 ### 2- Cadastrar um novo Produtor rural
