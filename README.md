@@ -24,7 +24,7 @@ Ou usando o gerenciador de pacotes NPM:
 
 `npm install`
 
-**Crie um arquivo chamado \***.env**\*, para armazenar a configuração das variáveis de ambiente do projeto, e adicione as informações a seguir:**
+**Crie um arquivo chamado .env, para armazenar a configuração das variáveis de ambiente do projeto, e adicione as informações a seguir:**
 
 ```javascript
 PORT=3333
