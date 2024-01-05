@@ -18,7 +18,7 @@ export default class FarmersController {
     const areaVegetacaoHectares = body.area_vegetacao_hectares
     delete body.culturas_plantadas
 
-    const areaValidate = this.helpers.areaCalculate(
+    const areaValidate = this.helpers.calculateArea(
       areaTotalHectares,
       areaAgricultavelHectares,
       areaVegetacaoHectares
@@ -96,7 +96,7 @@ export default class FarmersController {
     const areaAgricultavelHectares = body.area_agricultavel_hectares
     const areaVegetacaoHectares = body.area_vegetacao_hectares
 
-    const areaValidate = this.helpers.areaCalculate(
+    const areaValidate = this.helpers.calculateArea(
       areaTotalHectares,
       areaAgricultavelHectares,
       areaVegetacaoHectares

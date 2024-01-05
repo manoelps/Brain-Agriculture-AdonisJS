@@ -1,5 +1,5 @@
 export default class Helpers {
-  public areaCalculate = (total, areaAgricultavel, areaVegetacao) => {
+  public calculateArea = (total, areaAgricultavel, areaVegetacao) => {
     if (areaAgricultavel + areaVegetacao > total) {
       return {
         errors: [
