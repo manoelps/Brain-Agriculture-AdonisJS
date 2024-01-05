@@ -24,6 +24,27 @@ Ou usando o gerenciador de pacotes NPM:
 
 `npm install`
 
+**Crie um arquivo chamado ***.env*** para armazenar as configuração das variaveis de ambiente do projeto e adicione as informações a seguir:**
+```javascript
+PORT=3333
+HOST=0.0.0.0
+NODE_ENV=development
+APP_KEY=6Cu4fe6JaAvdAwwi53rGNNupFOFXt_TM
+DRIVE_DISK=local
+
+POSTGRES_USER=admin
+POSTGRES_PASSWORD=postgres
+POSTGRES_DB=brain_agriculture
+
+DB_CONNECTION=pg
+PG_HOST=127.0.0.1
+PG_PORT=5432
+PG_USER=admin
+PG_PASSWORD=postgres
+PG_DB_NAME=brain_agriculture
+```
+
+
 **Inicialize o serviço do container docker para ter acesso ao banco de dados PostgreSQL**
 
 `docker-compose up -d` (caso ocorra erro ao executar, vá para a sessão **_Resolvendo problemas_** ao final do arquivo, depois volte a esse ponto para continuar)
