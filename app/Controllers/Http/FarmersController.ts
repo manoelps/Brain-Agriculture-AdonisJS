@@ -5,6 +5,8 @@ import PlantedCrop from 'App/Models/PlantedCrop'
 import RegisterValidator from 'App/Validators/RegisterValidator'
 import UpdateValidator from 'App/Validators/UpdateValidator'
 
+import { handleRowNotFoundError } from '../Utils/ErrorHandlers'
+
 export default class FarmersController {
   private helpers = new Helpers()
 
@@ -57,31 +59,41 @@ export default class FarmersController {
     }
   }
 
-  public async show({ params }: HttpContextContract) {
-    const farmer = await Farmer.findOrFail(params.id)
+  public async show({ params, response }: HttpContextContract) {
+    try {
+      const farmer = await Farmer.query()
+        .where('id', params.id)
+        .preload('plantedCrops')
+        .firstOrFail()
 
-    await farmer.load('plantedCrops')
-
-    return {
-      data: farmer,
+      return { data: farmer }
+    } catch (error) {
+      if (error.code === 'E_ROW_NOT_FOUND') {
+        handleRowNotFoundError(response)
+      }
     }
   }
 
-  public async destroy({ params }: HttpContextContract) {
-    const farmer = await Farmer.findOrFail(params.id)
+  public async destroy({ params, response }: HttpContextContract) {
+    try {
+      await (await Farmer.query().where('id', params.id).firstOrFail()).delete()
 
-    await farmer.delete()
-
-    return {
-      message: 'Registro exluído com sucesso!',
+      return {
+        message: 'Registro exluído com sucesso!',
+      }
+    } catch (error) {
+      if (error.code === 'E_ROW_NOT_FOUND') {
+        handleRowNotFoundError(response)
+      }
     }
   }
 
   public async update({ params, request, response }: HttpContextContract) {
+    const farmer = await Farmer.findOrFail(params.id)
+
     await request.validate(UpdateValidator)
 
     const body = request.body()
-    const farmer = await Farmer.findOrFail(params.id)
 
     farmer.cpf_cnpj = body.cpf_cnpj
     farmer.nome_produtor = body.nome_produtor
@@ -124,11 +136,17 @@ export default class FarmersController {
     }
   }
 
-  public async destroyPlantedCrop({ params }: HttpContextContract) {
-    const plantedCrop = await PlantedCrop.findOrFail(params.id)
-    await plantedCrop.delete()
-    return {
-      message: 'Cultura removida com sucesso!',
+  public async destroyPlantedCrop({ params, response }: HttpContextContract) {
+    try {
+      const plantedCrop = await PlantedCrop.findOrFail(params.id)
+      await plantedCrop.delete()
+      return {
+        message: 'Cultura removida com sucesso!',
+      }
+    } catch (error) {
+      if (error.code === 'E_ROW_NOT_FOUND') {
+        handleRowNotFoundError(response)
+      }
     }
   }
 }
