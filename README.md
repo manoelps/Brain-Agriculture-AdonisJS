@@ -70,25 +70,25 @@ POST http://localhost:3333/api/v1/farmers
 
 ```javascript
 {
-	"cpf_cnpj": "61.479.106/0001-04",
-	"nome_produtor": "Manoel Pereira dos Santos",
-	"nome_fazenda": "Fazenda Ouro Preto",
-	"cidade": "Palmópolis",
-	"estado": "MG",
-	"area_total_hectares": 5,
-	"area_agricultavel_hectares": 2,
-	"area_vegetacao_hectares": 3,
-    "culturas_plantadas": [
-        {
-            "cultura":"Soja"
-        },
-        {
-            "cultura":"Milho"
-        },
-        {
-            "cultura":"Algodão"
-        }
-	]
+  "cpf_cnpj": "61.479.106/0001-04",
+  "nome_produtor": "Manoel Pereira dos Santos",
+  "nome_fazenda": "Fazenda Ouro Preto",
+  "cidade": "Palmópolis",
+  "estado": "MG",
+  "area_total_hectares": 5,
+  "area_agricultavel_hectares": 2,
+  "area_vegetacao_hectares": 3,
+  "culturas_plantadas": [
+    {
+      "cultura":"Soja"
+    },
+    {
+      "cultura":"Milho"
+    },
+    {
+      "cultura":"Algodão"
+    }
+  ]
 }
 
 ```
@@ -123,25 +123,25 @@ PATCH http://localhost:3333/api/v1/farmers/1
 
 ```javascript
 {
-    "cpf_cnpj": "61.479.106/0001-04",
-    "nome_produtor": "Manoel Pereira dos Santos",
-    "nome_fazenda": "Fazenda Diamantina",
-    "cidade": "Palmópolis",
-    "estado": "MG",
-    "area_total_hectares": 8,
-    "area_agricultavel_hectares": 3,
-    "area_vegetacao_hectares": 2,
-    "culturas_plantadas": [
-        {
-            "cultura":"Algodão"
-        },
-        {
-            "cultura":"Café"
-        },
-        {
-            "cultura":"Cana de Açucar"
-        }
-    ]
+  "cpf_cnpj": "61.479.106/0001-04",
+  "nome_produtor": "Manoel Pereira dos Santos",
+  "nome_fazenda": "Fazenda Diamantina",
+  "cidade": "Palmópolis",
+  "estado": "MG",
+  "area_total_hectares": 8,
+  "area_agricultavel_hectares": 3,
+  "area_vegetacao_hectares": 2,
+  "culturas_plantadas": [
+    {
+    "cultura":"Algodão"
+    },
+    {
+      "cultura":"Café"
+    },
+    {
+      "cultura":"Cana de Açucar"
+    }
+  ]
 }
 ```
 
