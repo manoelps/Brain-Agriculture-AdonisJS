@@ -24,7 +24,7 @@ Ou usando o gerenciador de pacotes NPM:
 
 `npm install`
 
-**Crie um arquivo chamado \***.env**\*, para armazenar as configuração das variáveis de ambiente do projeto, e adicione as informações a seguir:**
+**Crie um arquivo chamado \***.env**\*, para armazenar a configuração das variáveis de ambiente do projeto, e adicione as informações a seguir:**
 
 ```javascript
 PORT=3333
@@ -56,6 +56,12 @@ Execute as migrations
 Inicialize a aplicação:
 
 `node ace serve --watch`
+
+# Testes automatizados
+
+Inicia o executor de teste no modo de observação.
+
+`node ace test`
 
 # Rotas
 
