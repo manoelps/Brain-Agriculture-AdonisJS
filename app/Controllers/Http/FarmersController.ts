@@ -46,8 +46,12 @@ export default class FarmersController {
     }
   }
 
-  public async index() {
-    const farmers = await Farmer.query().preload('plantedCrops')
+  public async index({ request }: HttpContextContract) {
+    const page = request.input('page', 1)
+    const limit = 5
+
+    const farmers = await Farmer.query().preload('plantedCrops').paginate(page, limit)
+
     return {
       data: farmers,
     }
